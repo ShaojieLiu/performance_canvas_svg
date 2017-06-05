@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas_vs_svg</title>
+    <link rel="stylesheet" href="./vs.css">
+</head>
+<body>
+    <p>关于canvas和svg平面绘图性能的调研</p>
+    <div class="main"></div>
+    <svg class="grandson" id='svg${num}'></svg>
+    <!--<button id="animationButton">animationButton</button>-->
+    <!--<canvas id="canvas"></canvas>-->
+
+<script>
+    let e = (sel) => document.querySelector(sel)
+    let log = (...arg) => console.log(...arg)
+</script>
+<script src="./insert.js"></script>
+<script src="./vs.js"></script>
+<script src="./frame.js"></script>
+
+</body>
+</html>
