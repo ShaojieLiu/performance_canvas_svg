@@ -18,7 +18,7 @@ let ball = (f) => {
         strokeStyle: `#${Math.floor(Math.random()*(2 << 23)).toString(16)}`
     }
 }
-
+let ballNum = 2000
 let balls = (num) => {
     let result = [], factor = 0.001
     for(let i = 0; i < num; i++) {
@@ -30,7 +30,7 @@ let balls = (num) => {
 var canvas = document.getElementById('canvas9'),
     ctx = canvas.getContext('2d'),
     paused = false,
-    discs = balls(2000)
+    discs = balls(ballNum)
     // discs = [
     //     {
     //         x:150,
@@ -123,7 +123,7 @@ function animate(time){
             count++
 
             if (count > 3) {
-                let ans = ` 帧率约为 ${Math.round(lastFpsUpdate)}`,
+                let ans = ` ${ballNum}个圆 帧率约为 ${Math.round(lastFpsUpdate)}`,
                     sel = `.${dadClass} .ans1`
                 e(sel).innerText = e(sel).innerText.replace('{{result}}', ans)
             }
