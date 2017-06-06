@@ -23,12 +23,14 @@ let ball = (f) => {
 }
 
 let ballNum = Number(window.localStorage.getItem("ballNum")) || 2000;
+let refresh = () => {
+    let num = e('#ballNum-input').value || 2000
+    window.localStorage.setItem("ballNum", num)
+    location.reload(true)
+}
 (() => {
-    e('#ballNum-enter').addEventListener('click', () => {
-        let num = e('#ballNum-input').value || 2000
-        window.localStorage.setItem("ballNum", num)
-        location.reload(true)
-    })
+    e('#ballNum-enter').addEventListener('click', refresh)
+    e('#ballNum-enter').addEventListener('touchend', refresh)
 })()
 
 let balls = (num) => {
