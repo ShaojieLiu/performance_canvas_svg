@@ -3,7 +3,7 @@
  */
 let btn = `<button id="animationButton">canvasButton</button>
             <button id="svgButton">svgButton</button>
-            <input id="ballNum-input" type="text"><button id="ballNum-enter">enter</button>`,
+            <input id="ballNum-input" type="text"><button id="ballNum-enter">确定输入 并 刷新</button>`,
     dadClass = 'game9'
 
 insert('压力动画帧率', dadClass, 9, btn)
@@ -27,6 +27,7 @@ let ballNum = Number(window.localStorage.getItem("ballNum")) || 2000;
     e('#ballNum-enter').addEventListener('click', () => {
         let num = e('#ballNum-input').value || 2000
         window.localStorage.setItem("ballNum", num)
+        location.reload(true)
     })
 })()
 
