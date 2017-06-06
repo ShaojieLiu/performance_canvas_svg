@@ -18,7 +18,7 @@ let svgPath = () => {
         return result.map(ball).join('')
     }
 
-    let ballNum = 2000
+    // let ballNum = 2000
     svg.insertAdjacentHTML('beforeend', balls(ballNum))
 
     let paused = true

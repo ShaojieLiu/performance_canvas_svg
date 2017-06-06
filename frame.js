@@ -2,7 +2,8 @@
  * Created by liushaojie on 2017/6/5.
  */
 let btn = `<button id="animationButton">canvasButton</button>
-            <button id="svgButton">svgButton</button>`,
+            <button id="svgButton">svgButton</button>
+            <input type="text"><button>enter</button>`,
     dadClass = 'game9'
 
 insert('压力动画帧率', dadClass, 9, btn)
@@ -20,7 +21,7 @@ let ball = (f) => {
 
     }
 }
-let ballNum = 2000
+let ballNum = 1000
 let balls = (num) => {
     let result = [], factor = 1
     for(let i = 0; i < num; i++) {
