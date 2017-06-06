@@ -1,10 +1,11 @@
 /**
  * Created by liushaojie on 2017/6/5.
  */
-let btn = `<button id="animationButton">animationButton</button>`,
+let btn = `<button id="animationButton">canvasButton</button>
+            <button id="svgButton">svgButton</button>`,
     dadClass = 'game9'
 
-insert('动画帧率', dadClass, 9, btn)
+insert('压力动画帧率', dadClass, 9, btn)
 
 let ball = (f) => {
     return{
@@ -12,15 +13,15 @@ let ball = (f) => {
         y:75,
         lastX:150,
         lastY:75,
-        velorityX: 1+0.01*f,
-        velorityY: 1+f,
-        radius:25,
+        velorityX: 0.01*f,
+        velorityY: 0.01*f,
+        radius:20,
         strokeStyle: `#${Math.floor(Math.random()*(2 << 23)).toString(16)}`
     }
 }
 let ballNum = 2000
 let balls = (num) => {
-    let result = [], factor = 0.001
+    let result = [], factor = 1
     for(let i = 0; i < num; i++) {
         result.push(i*factor)
     }
@@ -102,7 +103,6 @@ var lastFpsUpdateTime = 0,
     lastFpsUpdate = 0;
 
 //Animation
-let count = 0
 function animate(time){
     let fps = 0;
     if (time == undefined) {
@@ -122,10 +122,10 @@ function animate(time){
             lastFpsUpdate = fps;
             count++
 
-            if (count > 3) {
-                let ans = ` ${ballNum}个圆 帧率约为 ${Math.round(lastFpsUpdate)}`,
+            if (1) {
+                let ans = `canvas ${ballNum}个圆 帧率约为 ${Math.round(lastFpsUpdate.toFixed())}`,
                     sel = `.${dadClass} .ans1`
-                e(sel).innerText = e(sel).innerText.replace('{{result}}', ans)
+                e(sel).innerText = ans
             }
         };
         ctx.fillStyle = 'cornflowerblue';
