@@ -3,7 +3,7 @@
  */
 let btn = `<button id="animationButton">canvasButton</button>
             <button id="svgButton">svgButton</button>
-            <input type="text"><button>enter</button>`,
+            <input id="ballNum-input" type="text"><button id="ballNum-enter">enter</button>`,
     dadClass = 'game9'
 
 insert('压力动画帧率', dadClass, 9, btn)
@@ -21,7 +21,15 @@ let ball = (f) => {
 
     }
 }
-let ballNum = 1000
+
+let ballNum = Number(window.localStorage.getItem("ballNum")) || 2000;
+(() => {
+    e('#ballNum-enter').addEventListener('click', () => {
+        let num = e('#ballNum-input').value || 2000
+        window.localStorage.setItem("ballNum", num)
+    })
+})()
+
 let balls = (num) => {
     let result = [], factor = 1
     for(let i = 0; i < num; i++) {
