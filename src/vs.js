@@ -26,7 +26,7 @@ let test = (num, fun, sel) => {
     e(sel).innerText = e(sel).innerText.replace('{{result}}', ans)
 }
 
-let game1 = (num) => {
+let game1 = (num, cb) => {
     let dadClass = `game1`, gameNum = 1
     insert('依次绘制9999个矩形', dadClass, gameNum)
 
@@ -50,6 +50,8 @@ let game1 = (num) => {
     }
 
     test(num, drawRectSvg, `.${dadClass} .ans2`)
+
+    cb(num)
 }
 
 let rects = []
@@ -82,8 +84,8 @@ let game2 = (num) => {
 }
 
 let __main = () => {
-    game1(9999)
-    game2(9999)
+    game1(9999, game2)
+    // game2(9999)
 }
 
 // setTimeout(() => {
