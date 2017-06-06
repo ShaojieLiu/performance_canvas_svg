@@ -16,7 +16,8 @@ let ball = (f) => {
         velorityX: 0.01*f,
         velorityY: 0.01*f,
         radius:20,
-        strokeStyle: `#${Math.floor(Math.random()*(2 << 23)).toString(16)}`
+        strokeStyle:`#${Math.floor(Math.random()*(2 << 23)).toString(16)}`
+
     }
 }
 let ballNum = 2000
@@ -120,7 +121,6 @@ function animate(time){
         if (now - lastFpsUpdateTime > 1000) {
             lastFpsUpdateTime = now;
             lastFpsUpdate = fps;
-            count++
 
             if (1) {
                 let ans = `canvas ${ballNum}个圆 帧率约为 ${Math.round(lastFpsUpdate.toFixed())}`,
