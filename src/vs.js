@@ -85,6 +85,7 @@ let game2 = (num) => {
 
 let __main = () => {
     game1(9999, game2)
+    game2(9999)
     // game2(9999)
 }
 
