@@ -22,7 +22,7 @@ let ball = (f) => {
     }
 }
 
-let ballNum = Number(window.localStorage.getItem("ballNum")) || 2000;
+let ballNum = Number(window.localStorage.getItem("ballNum")) || 1000;
 let refresh = () => {
     let num = e('#ballNum-input').value || 2000
     window.localStorage.setItem("ballNum", num)
